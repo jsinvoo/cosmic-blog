@@ -1,0 +1,591 @@
+/* ============================================
+   Cosmic Curiosity — Payload Admin Dark Theme
+   Matches frontend: #1a1a1a bg, #00e5ff cyan accent,
+   border-white/10 borders, rounded-xl cards
+   ============================================ */
+
+/* ------------------------------------------------------------------
+   1. THEME VARIABLE OVERRIDES
+   ------------------------------------------------------------------ */
+html[data-theme="dark"] {
+
+  /* ---- Elevation / surface scale ---- */
+  --theme-bg: #1a1a1a;
+  --theme-input-bg: #222;
+  --theme-elevation-0: #1a1a1a;
+  --theme-elevation-50: #1e1e1e;
+  --theme-elevation-100: #2a2a2a;
+  --theme-elevation-150: #2f2f2f;
+  --theme-elevation-200: #333;
+  --theme-elevation-250: #383838;
+  --theme-elevation-300: #3e3e3e;
+  --theme-elevation-350: #444;
+  --theme-elevation-400: #4a4a4a;
+  --theme-elevation-450: #505050;
+  --theme-elevation-500: #555;
+  --theme-elevation-550: #5e5e5e;
+  --theme-elevation-600: #666;
+  --theme-elevation-650: #777;
+  --theme-elevation-700: #888;
+  --theme-elevation-750: #999;
+  --theme-elevation-800: #aaa;
+  --theme-elevation-850: #bbb;
+  --theme-elevation-900: #ddd;
+  --theme-elevation-950: #eee;
+  --theme-elevation-1000: #fff;
+
+  /* ---- Borders ---- */
+  --theme-border-color: rgba(255, 255, 255, 0.1);
+
+  /* ---- Overlay ---- */
+  --theme-overlay: rgba(0, 0, 0, 0.75);
+
+  /* ---- Accent — full cyan scale ---- */
+  --theme-success-50: #0a1c1f;
+  --theme-success-100: #0c2a30;
+  --theme-success-150: #0e3840;
+  --theme-success-200: #104550;
+  --theme-success-250: #125360;
+  --theme-success-300: #146070;
+  --theme-success-350: #167080;
+  --theme-success-400: #188090;
+  --theme-success-450: #1a90a0;
+  --theme-success-500: #00e5ff;
+  --theme-success-550: #1aebff;
+  --theme-success-600: #33eeff;
+  --theme-success-650: #4df0ff;
+  --theme-success-700: #66f3ff;
+  --theme-success-750: #80f5ff;
+  --theme-success-800: #99f7ff;
+  --theme-success-850: #b3faff;
+  --theme-success-900: #ccfcff;
+  --theme-success-950: #e6feff;
+
+  /* ---- Error — warm pink/red ---- */
+  --theme-error-50: #2a1215;
+  --theme-error-100: #3d1519;
+  --theme-error-150: #50181d;
+  --theme-error-200: #631b21;
+  --theme-error-250: #761e25;
+  --theme-error-300: #8a2128;
+  --theme-error-350: #9d252c;
+  --theme-error-400: #c03040;
+  --theme-error-450: #d94050;
+  --theme-error-500: #ff5c7c;
+  --theme-error-550: #ff6d8a;
+  --theme-error-600: #ff7d97;
+  --theme-error-650: #ff8ea5;
+  --theme-error-700: #ff9fb2;
+  --theme-error-750: #ffb0c0;
+  --theme-error-800: #ffc1cd;
+  --theme-error-850: #ffd1db;
+  --theme-error-900: #ffe2e8;
+  --theme-error-950: #fff2f5;
+
+  /* ---- Warning — amber ---- */
+  --theme-warning-50: #241a0c;
+  --theme-warning-100: #382810;
+  --theme-warning-150: #4b3514;
+  --theme-warning-200: #5f4318;
+  --theme-warning-250: #72501c;
+  --theme-warning-300: #865e20;
+  --theme-warning-350: #996b24;
+  --theme-warning-400: #ad7928;
+  --theme-warning-450: #c0862c;
+  --theme-warning-500: #ffb347;
+  --theme-warning-550: #ffbb59;
+  --theme-warning-600: #ffc36b;
+  --theme-warning-650: #ffcb7e;
+  --theme-warning-700: #ffd390;
+  --theme-warning-750: #ffdba2;
+  --theme-warning-800: #ffe3b4;
+  --theme-warning-850: #ffebc6;
+  --theme-warning-900: #fff3d8;
+  --theme-warning-950: #fffbea;
+}
+
+/* ------------------------------------------------------------------
+   2. GLOBAL / TYPOGRAPHY
+   ------------------------------------------------------------------ */
+body {
+  font-family: "Inter", var(--font-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: -0.01em;
+}
+
+/* ------------------------------------------------------------------
+   3. APP HEADER / TOP BAR
+   ------------------------------------------------------------------ */
+.app-header {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.app-header__bg {
+  background: rgba(26, 26, 26, 0.85) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+}
+
+/* Breadcrumb step-nav links */
+.step-nav a {
+  color: rgba(255, 255, 255, 0.5) !important;
+  transition: color 0.2s ease;
+}
+
+.step-nav a:hover {
+  color: #00e5ff !important;
+}
+
+.step-nav .step-nav__last {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* ------------------------------------------------------------------
+   4. SIDEBAR / NAV
+   ------------------------------------------------------------------ */
+.nav {
+  background: #1a1a1a !important;
+  border-right: 1px solid rgba(255, 255, 255, 0.06) !important;
+}
+
+.nav-group__label {
+  color: rgba(255, 255, 255, 0.35) !important;
+  font-size: 0.65rem !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+  font-weight: 600 !important;
+}
+
+.nav-group__link {
+  border-radius: 8px !important;
+  margin: 1px 8px !important;
+  padding: 6px 12px !important;
+  transition: all 0.15s ease !important;
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.nav-group__link:hover {
+  background: rgba(255, 255, 255, 0.04) !important;
+  color: #fff !important;
+}
+
+.nav-group__link--active {
+  background: rgba(0, 229, 255, 0.08) !important;
+  color: #00e5ff !important;
+}
+
+.nav-group__link--active::before {
+  background: #00e5ff !important;
+  border-radius: 2px !important;
+}
+
+/* ------------------------------------------------------------------
+   5. DASHBOARD
+   ------------------------------------------------------------------ */
+
+/* Section label */
+.collections__label {
+  color: rgba(255, 255, 255, 0.35) !important;
+  font-size: 0.7rem !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  font-weight: 600 !important;
+}
+
+/* Collection cards */
+.card {
+  background: #2a2a2a !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 14px !important;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  overflow: hidden;
+}
+
+.card:hover {
+  border-color: rgba(0, 229, 255, 0.25) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3),
+              0 0 0 1px rgba(0, 229, 255, 0.1);
+}
+
+.card__title {
+  font-weight: 600 !important;
+  letter-spacing: -0.01em;
+}
+
+/* Card "+" action button */
+.card__actions .btn {
+  opacity: 0.4;
+  transition: all 0.2s ease !important;
+}
+
+.card:hover .card__actions .btn {
+  opacity: 1;
+  color: #00e5ff !important;
+}
+
+/* ------------------------------------------------------------------
+   6. BUTTONS
+   ------------------------------------------------------------------ */
+
+/* Universal transitions */
+.btn {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* Primary — cyan filled */
+.btn--style-primary {
+  background: #00e5ff !important;
+  color: #0a1c1f !important;
+  border: none !important;
+  border-radius: 8px !important;
+  font-weight: 600 !important;
+  box-shadow: 0 2px 8px rgba(0, 229, 255, 0.2);
+}
+
+.btn--style-primary:hover {
+  background: #33ebff !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(0, 229, 255, 0.3);
+}
+
+.btn--style-primary:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 4px rgba(0, 229, 255, 0.2);
+}
+
+/* Secondary — ghost style */
+.btn--style-secondary {
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-radius: 8px !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+  background: transparent !important;
+}
+
+.btn--style-secondary:hover {
+  border-color: rgba(0, 229, 255, 0.3) !important;
+  color: #00e5ff !important;
+  background: rgba(0, 229, 255, 0.05) !important;
+}
+
+/* Pill buttons */
+.btn--style-pill,
+.pill-selector__pill {
+  border-radius: 9999px !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  transition: all 0.15s ease !important;
+}
+
+.btn--style-pill:hover,
+.pill-selector__pill:hover {
+  border-color: rgba(0, 229, 255, 0.3) !important;
+  color: #00e5ff !important;
+}
+
+.pill-selector__pill--selected {
+  background: rgba(0, 229, 255, 0.12) !important;
+  border-color: rgba(0, 229, 255, 0.3) !important;
+  color: #00e5ff !important;
+}
+
+/* Icon-label buttons (Columns, Filters, etc.) */
+.btn--style-icon-label {
+  border-radius: 8px !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  background: rgba(255, 255, 255, 0.03) !important;
+}
+
+.btn--style-icon-label:hover {
+  border-color: rgba(0, 229, 255, 0.25) !important;
+  background: rgba(0, 229, 255, 0.05) !important;
+}
+
+/* ------------------------------------------------------------------
+   7. LINKS
+   ------------------------------------------------------------------ */
+a {
+  color: #00e5ff;
+  transition: color 0.15s ease;
+}
+
+a:hover {
+  color: #66f3ff;
+}
+
+/* ------------------------------------------------------------------
+   8. LIST VIEW / TABLE
+   ------------------------------------------------------------------ */
+.collection-list {
+  padding: 0 4px;
+}
+
+/* Table container */
+.table {
+  border-radius: 12px !important;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Table header */
+.table thead {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.sort-column__label {
+  color: rgba(255, 255, 255, 0.4) !important;
+  font-size: 0.7rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+}
+
+/* Table rows */
+.table tbody tr {
+  transition: background-color 0.15s ease;
+}
+
+.table tbody tr:hover {
+  background-color: rgba(0, 229, 255, 0.03) !important;
+}
+
+.row-1, .row-2, .row-3, .row-4, .row-5,
+.row-6, .row-7, .row-8, .row-9, .row-10 {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04) !important;
+  transition: background-color 0.15s ease;
+}
+
+.row-1:hover, .row-2:hover, .row-3:hover, .row-4:hover, .row-5:hover,
+.row-6:hover, .row-7:hover, .row-8:hover, .row-9:hover, .row-10:hover {
+  background-color: rgba(0, 229, 255, 0.03) !important;
+}
+
+/* Cell links */
+.cell-title a {
+  font-weight: 500 !important;
+}
+
+/* Status badges */
+.selected--published {
+  color: #00e5ff !important;
+}
+
+/* Per-page selector */
+.per-page__button {
+  border-radius: 6px !important;
+  transition: all 0.15s ease !important;
+}
+
+.per-page__button-active {
+  background: rgba(0, 229, 255, 0.1) !important;
+  color: #00e5ff !important;
+}
+
+/* ------------------------------------------------------------------
+   9. SEARCH BAR
+   ------------------------------------------------------------------ */
+.search-filter__input,
+.search-query__input {
+  background: rgba(255, 255, 255, 0.04) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 10px !important;
+  padding: 10px 16px 10px 40px !important;
+  transition: all 0.2s ease !important;
+}
+
+.search-filter__input:focus,
+.search-query__input:focus {
+  border-color: rgba(0, 229, 255, 0.4) !important;
+  background: rgba(255, 255, 255, 0.06) !important;
+  box-shadow: 0 0 0 3px rgba(0, 229, 255, 0.08) !important;
+}
+
+/* ------------------------------------------------------------------
+   10. FORM FIELDS (Edit view)
+   ------------------------------------------------------------------ */
+input,
+select,
+textarea {
+  border-radius: 8px !important;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: rgba(0, 229, 255, 0.4) !important;
+  box-shadow: 0 0 0 3px rgba(0, 229, 255, 0.08) !important;
+}
+
+/* Field labels */
+.field-label {
+  color: rgba(255, 255, 255, 0.5) !important;
+  font-size: 0.72rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.04em !important;
+  text-transform: uppercase !important;
+}
+
+/* Field descriptions */
+.field-description {
+  color: rgba(255, 255, 255, 0.3) !important;
+}
+
+/* Checkbox restyling */
+.checkbox-input__icon {
+  border-radius: 4px !important;
+}
+
+/* ------------------------------------------------------------------
+   11. DRAWERS / MODALS / POPUPS
+   ------------------------------------------------------------------ */
+.drawer__content {
+  border-radius: 16px 0 0 16px !important;
+  border-left: 1px solid rgba(255, 255, 255, 0.06) !important;
+}
+
+.popup__content {
+  background: #2a2a2a !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5),
+              0 0 0 1px rgba(255, 255, 255, 0.05) !important;
+}
+
+/* ------------------------------------------------------------------
+   12. ACCOUNT BUTTON (top-right avatar)
+   ------------------------------------------------------------------ */
+.app-header__account .gravatar {
+  border: 2px solid rgba(255, 255, 255, 0.1) !important;
+  transition: border-color 0.2s ease !important;
+}
+
+.app-header__account .gravatar:hover {
+  border-color: rgba(0, 229, 255, 0.4) !important;
+}
+
+/* ------------------------------------------------------------------
+   13. GUTTER / LAYOUT SPACING
+   ------------------------------------------------------------------ */
+.gutter--left {
+  padding-left: 24px !important;
+}
+
+.gutter--right {
+  padding-right: 24px !important;
+}
+
+/* ------------------------------------------------------------------
+   14. LIST HEADER
+   ------------------------------------------------------------------ */
+.list-header__title {
+  font-weight: 700 !important;
+  letter-spacing: -0.02em !important;
+}
+
+/* Create New button in list header */
+.list-create-new-doc__create-new-button {
+  border-radius: 9999px !important;
+  padding: 4px 16px !important;
+  font-size: 0.8rem !important;
+  font-weight: 600 !important;
+}
+
+/* ------------------------------------------------------------------
+   15. FOCUS RINGS
+   ------------------------------------------------------------------ */
+*:focus-visible {
+  outline: 2px solid rgba(0, 229, 255, 0.5) !important;
+  outline-offset: 2px;
+}
+
+/* ------------------------------------------------------------------
+   16. SCROLLBAR
+   ------------------------------------------------------------------ */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* ------------------------------------------------------------------
+   17. TAGS / BADGES
+   ------------------------------------------------------------------ */
+.tag {
+  border-radius: 9999px !important;
+  background: rgba(0, 229, 255, 0.08) !important;
+  border: 1px solid rgba(0, 229, 255, 0.15) !important;
+  color: #00e5ff !important;
+}
+
+/* ------------------------------------------------------------------
+   18. TOOLTIP
+   ------------------------------------------------------------------ */
+.tooltip {
+  background: #333 !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* ------------------------------------------------------------------
+   19. SELECTION / HIGHLIGHTS
+   ------------------------------------------------------------------ */
+::selection {
+  background: rgba(0, 229, 255, 0.25);
+  color: #fff;
+}
+
+/* ------------------------------------------------------------------
+   20. SEPARATOR / HR
+   ------------------------------------------------------------------ */
+hr,
+.divider {
+  border-color: rgba(255, 255, 255, 0.06) !important;
+}
+
+/* ------------------------------------------------------------------
+   21. REACT-SELECT OVERRIDES (dropdowns)
+   ------------------------------------------------------------------ */
+[class*="css-"][class*="-control"] {
+  border-radius: 8px !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  transition: all 0.2s ease !important;
+}
+
+[class*="css-"][class*="-control"]:hover {
+  border-color: rgba(0, 229, 255, 0.3) !important;
+}
+
+[class*="css-"][class*="-menu"] {
+  border-radius: 10px !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.5) !important;
+  overflow: hidden;
+}
+
+/* ------------------------------------------------------------------
+   22. LOADING SHIMMER
+   ------------------------------------------------------------------ */
+@keyframes shimmer {
+  0% { opacity: 0.3; }
+  50% { opacity: 0.5; }
+  100% { opacity: 0.3; }
+}
+
+.shimmer,
+[class*="loading"] {
+  animation: shimmer 1.5s ease-in-out infinite;
+}
